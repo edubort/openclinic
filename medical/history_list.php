@@ -36,7 +36,7 @@
   $patient = new Patient($idPatient);
   if ($patient->getName() == '')
   {
-    FlashMsg::add(_("That patient does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("Beneficiário não cadastrado."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -62,11 +62,11 @@
   echo $patient->getHeader();
 
   echo HTML::para(
-    HTML::link(_("View Personal Antecedents"), '../medical/history_personal_view.php',
+    HTML::link(_("Ver antecedentes clínicos"), '../medical/history_personal_view.php',
       array('id_patient' => $idPatient)
     )
     . ' | '
-    . HTML::link(_("View Family Antecedents"), '../medical/history_family_view.php',
+    . HTML::link(_("Ver antecedentes familiares"), '../medical/history_family_view.php',
       array('id_patient' => $idPatient)
     )
   );
@@ -80,7 +80,7 @@
   {
     $problemQ->close();
 
-    echo Msg::info(_("No closed medical problems defined for this patient."));
+    echo Msg::info(_("Não há cenários clínicos encerrados para esse beneficiário."));
     include_once("../layout/footer.php");
     exit();
   }

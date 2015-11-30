@@ -18,7 +18,7 @@
 
   $tbody = array();
 
-  $row = Form::label("parents_status_health", _("Parents Status Health") . ":");
+  $row = Form::label("parents_status_health", _("Estado atual de saúde dos pais") . ":");
   $row .= Form::textArea("parents_status_health",
     $formVar["parents_status_health"],
     array(
@@ -28,7 +28,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("brothers_status_health", _("Brothers and Sisters Status Health") . ":");
+  $row = Form::label("brothers_status_health", _("Estado atual de saúde dos irmãos") . ":");
   $row .= Form::textArea("brothers_status_health",
     $formVar["brothers_status_health"],
     array(
@@ -38,7 +38,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("spouse_childs_status_health", _("Spouse and Childs Status Health") . ":");
+  $row = Form::label("spouse_childs_status_health", _("Histórico de problemas degenerativos ou de doenças crônicas") . ":");
   $row .= Form::textArea("spouse_childs_status_health",
     $formVar["spouse_childs_status_health"],
     array(
@@ -48,7 +48,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("family_illness", _("Family Illness") . ":");
+  $row = Form::label("family_illness", _("Histórico visitas domiciliares") . ":");
   $row .= Form::textArea("family_illness",
     $formVar["family_illness"],
     array(
@@ -59,7 +59,7 @@
   $tbody[] = $row;
 
   $tfoot = array(
-    Form::button("update", _("Update"))
+    Form::button("update", _("Atualizar dados"))
     . Form::generateToken()
   );
 

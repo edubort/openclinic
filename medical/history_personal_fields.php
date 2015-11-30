@@ -18,7 +18,7 @@
 
   $tbody = array();
 
-  $row = Form::label("birth_growth", _("Birth and Growth") . ":");
+  $row = Form::label("birth_growth", _("Informações socioeconomicas e sobre o nascimento e crescimento") . ":");
   $row .= Form::textArea("birth_growth",
     $formVar["birth_growth"],
     array(
@@ -28,7 +28,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("growth_sexuality", _("Growth and Sexuality") . ":");
+  $row = Form::label("growth_sexuality", _("Informações sobre sexo e libido") . ":");
   $row .= Form::textArea("growth_sexuality",
     $formVar["growth_sexuality"],
     array(
@@ -38,7 +38,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("feed", _("Feed") . ":");
+  $row = Form::label("feed", _("Horários de atendimento do beneficiário") . ":");
   $row .= Form::textArea("feed",
     $formVar["feed"],
     array(
@@ -48,7 +48,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("habits", _("Habits") . ":");
+  $row = Form::label("habits", _("Hábitos pessoais") . ":");
   $row .= Form::textArea("habits",
     $formVar["habits"],
     array(
@@ -58,7 +58,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("peristaltic_conditions", _("Peristaltic Conditions") . ":");
+  $row = Form::label("peristaltic_conditions", _("Condições periostálticas e/ou alimentares") . ":");
   $row .= Form::textArea("peristaltic_conditions",
     $formVar["peristaltic_conditions"],
     array(
@@ -68,7 +68,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("psychological", _("Psychological Conditions") . ":");
+  $row = Form::label("psychological", _("Condições psicológicas") . ":");
   $row .= Form::textArea("psychological",
     $formVar["psychological"],
     array(
@@ -78,7 +78,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("children_complaint", _("Children Complaint") . ":");
+  $row = Form::label("children_complaint", _("Queixas gerais (dores, tratamento familiar, etc.)") . ":");
   $row .= Form::textArea("children_complaint",
     $formVar["children_complaint"],
     array(
@@ -88,7 +88,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("venereal_disease", _("Venereal Disease") . ":");
+  $row = Form::label("venereal_disease", _("Está com alguma doença crônica ou venéria? Se sim, quais?") . ":");
   $row .= Form::textArea("venereal_disease",
     $formVar["venereal_disease"],
     array(
@@ -98,7 +98,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("accident_surgical_operation", _("Accidents and Surgical Operations") . ":");
+  $row = Form::label("accident_surgical_operation", _("Passou por sirurgia ou sofreu algum acidente? Caso sim, quais?") . ":");
   $row .= Form::textArea("accident_surgical_operation",
     $formVar["accident_surgical_operation"],
     array(
@@ -108,7 +108,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("medicinal_intolerance", _("Medicinal Intolerance") . ":");
+  $row = Form::label("medicinal_intolerance", _("Possui intolerância a medicamentos? Se sim, quais?") . ":");
   $row .= Form::textArea("medicinal_intolerance",
     $formVar["medicinal_intolerance"],
     array(
@@ -118,7 +118,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("mental_illness", _("Mental Illness") . ":");
+  $row = Form::label("mental_illness", _("Possui alguma doença mental? Se sim, qual?") . ":");
   $row .= Form::textArea("mental_illness",
     $formVar["mental_illness"],
     array(

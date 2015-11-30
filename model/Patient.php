@@ -824,9 +824,9 @@ class Patient
   public function getHeader()
   {
     $_html = HTML::start('div', array('id' => 'patient_header', 'class' => 'clearfix'));
-    $_html .= HTML::para(_("Patient") . ': ' . $this->getName());
-    $_html .= HTML::para(_("Sex") . ': ' . ($this->getSex() == 'V' ? _("Male") : _("Female")));
-    $_html .= HTML::para(_("Age") . ': ' . $this->getAge(), array('class' => 'right'));
+    $_html .= HTML::para(_("Paciente") . ': <b>' . $this->getName()) . "</b>";
+    $_html .= HTML::para(_("Sexo") . ': ' . ($this->getSex() == 'V' ? _("Male") : _("Female")));
+    $_html .= HTML::para(_("Idade") . ': ' . $this->getAge(), array('class' => 'right'));
     $_html .= HTML::end('div');
 
     return $_html;

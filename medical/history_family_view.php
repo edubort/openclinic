@@ -36,7 +36,7 @@
   $patient = new Patient($idPatient);
   if ($patient->getName() == '')
   {
-    FlashMsg::add(_("That patient does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("Beneficiário não cadastrado."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -49,7 +49,7 @@
   {
     $historyQ->close();
 
-    FlashMsg::add(_("That patient does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("Beneficiário não cadastrado."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -68,7 +68,7 @@
   /**
    * Show page
    */
-  $title = _("View Family Antecedents");
+  $title = _("Ver antecedentes familiares");
   $titlePage = $patient->getName() . ' (' . $title . ')';
   require_once("../layout/header.php");
 
@@ -89,7 +89,7 @@
   if ($_SESSION['auth']['is_administrative'])
   {
     echo HTML::para(
-      HTML::link(_("Edit Family Antecedents"), '../medical/history_family_edit_form.php',
+      HTML::link(_("Editar antecedentes familiares"), '../medical/history_family_edit_form.php',
         array('id_patient' => $idPatient)
       )
     );
@@ -98,29 +98,29 @@
   /**
    * Show family antecedents
    */
-  echo HTML::section(2, _("Family Antecedents"));
+  echo HTML::section(2, _("Antecedentes Familiares"));
 
   if ($history->getParentsStatusHealth())
   {
-    echo HTML::section(3, _("Parents Status Health"));
+    echo HTML::section(3, _("Estado atual de saúde dos pais"));
     echo HTML::para(nl2br($history->getParentsStatusHealth()));
   }
 
   if ($history->getBrothersStatusHealth())
   {
-    echo HTML::section(3, _("Brothers and Sisters Status Health"));
+    echo HTML::section(3, _("Estado geral da saúde dos irmãos"));
     echo HTML::para(nl2br($history->getBrothersStatusHealth()));
   }
 
   if ($history->getSpouseChildsStatusHealth())
   {
-    echo HTML::section(3, _("Spouse and Childs Status Health"));
+    echo HTML::section(3, _("Histórico de problemas degenerativos ou de doenças crônicas"));
     echo HTML::para(nl2br($history->getSpouseChildsStatusHealth()));
   }
 
   if ($history->getFamilyIllness())
   {
-    echo HTML::section(3, _("Family Illness"));
+    echo HTML::section(3, _("Histórico visitas domiciliares"));
     echo HTML::para(nl2br($history->getFamilyIllness()));
   }
 

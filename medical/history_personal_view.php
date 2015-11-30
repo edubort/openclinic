@@ -36,7 +36,7 @@
   $patient = new Patient($idPatient);
   if ($patient->getName() == '')
   {
-    FlashMsg::add(_("That patient does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("Beneficiário não cadastrado."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -49,7 +49,7 @@
   {
     $historyQ->close();
 
-    FlashMsg::add(_("That patient does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("Beneficiário não cadastrado."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -68,7 +68,7 @@
   /**
    * Show page
    */
-  $title = _("View Personal Antecedents");
+  $title = _("Ver antecedentes clínicos");
   $titlePage = $patient->getName() . ' (' . $title . ')';
   require_once("../layout/header.php");
 
@@ -89,7 +89,7 @@
   if ($_SESSION['auth']['is_administrative'])
   {
     echo HTML::para(
-      HTML::link(_("Edit Personal Antecedents"), '../medical/history_personal_edit_form.php',
+      HTML::link(_("Editar antecedentes clínicos"), '../medical/history_personal_edit_form.php',
         array('id_patient' => $idPatient)
       )
     );
@@ -98,71 +98,71 @@
   /**
    * Show personal antecedents
    */
-  echo HTML::section(2, _("Personal Antecedents"));
+  echo HTML::section(2, _("Visualizar antecedentes clínicos"));
 
   if ($history->getBirthGrowth())
   {
-    echo HTML::section(3, _("Birth and Growth"));
+    echo HTML::section(3, _("Informações socioeconomicas e sobre o nascimento e crescimento"));
     echo HTML::para(nl2br($history->getBirthGrowth()));
   }
 
   if ($history->getGrowthSexuality())
   {
-    echo HTML::section(3, _("Growth and Sexuality"));
+    echo HTML::section(3, _("Informações sobre sexo e libido"));
     echo HTML::para(nl2br($history->getGrowthSexuality()));
   }
 
   if ($history->getFeed())
   {
-    echo HTML::section(3, _("Feed"));
+    echo HTML::section(3, _("Horários de atendimento do beneficiário"));
     echo HTML::para(nl2br($history->getFeed()));
   }
 
   if ($history->getHabits())
   {
-    echo HTML::section(3, _("Habits"));
+    echo HTML::section(3, _("Hábitos pessoais"));
     echo HTML::para(nl2br($history->getHabits()));
   }
 
   if ($history->getPeristalticConditions())
   {
-    echo HTML::section(3, _("Peristaltic Conditions"));
+    echo HTML::section(3, _("Condições periostáltica e/ou alimentar"));
     echo HTML::para(nl2br($history->getPeristalticConditions()));
   }
 
   if ($history->getPsychological())
   {
-    echo HTML::section(3, _("Psychological Conditions"));
+    echo HTML::section(3, _("Condições psicológicas"));
     echo HTML::para(nl2br($history->getPsychological()));
   }
 
   if ($history->getChildrenComplaint())
   {
-    echo HTML::section(3, _("Children Complaint"));
+    echo HTML::section(3, _("Queixas gerais (dores, tratamento familiar, etc.)"));
     echo HTML::para(nl2br($history->getChildrenComplaint()));
   }
 
   if ($history->getVenerealDisease())
   {
-    echo HTML::section(3, _("Venereal Disease"));
+    echo HTML::section(3, _("Está com alguma doença crônica ou venéria? Caso sim, quais?"));
     echo HTML::para(nl2br($history->getVenerealDisease()));
   }
 
   if ($history->getAccidentSurgicalOperation())
   {
-    echo HTML::section(3, _("Accidents and Surgical Operations"));
+    echo HTML::section(3, _("Passou por sirurgia ou sofreu algum acidente? Caso sim, quais?"));
     echo HTML::para(nl2br($history->getAccidentSurgicalOperation()));
   }
 
   if ($history->getMedicinalIntolerance())
   {
-    echo HTML::section(3, _("Medicinal Intolerance"));
+    echo HTML::section(3, _("Possui intolerância a medicamentos? Se sim, quais?"));
     echo HTML::para(nl2br($history->getMedicinalIntolerance()));
   }
 
   if ($history->getMentalIllness())
   {
-    echo HTML::section(3, _("Mental Illness"));
+    echo HTML::section(3, _("Possui alguma doença mental? Se sim, qual?"));
     echo HTML::para(nl2br($history->getMentalIllness()));
   }
 

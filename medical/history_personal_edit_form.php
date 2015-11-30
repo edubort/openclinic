@@ -36,7 +36,7 @@
   $patient = new Patient($idPatient);
   if ($patient->getName() == '')
   {
-    FlashMsg::add(_("That patient does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("Beneficiário não cadastrado."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -49,7 +49,7 @@
   {
     $historyQ->close();
 
-    FlashMsg::add(_("That patient does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("Beneficiário não cadastrado."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -82,7 +82,7 @@
   /**
    * Show page
    */
-  $title = _("Edit Personal Antecedents");
+  $title = _("Editar antecedentes clínicos");
   $titlePage = $patient->getName() . ' (' . $title . ')';
   $focusFormField = "birth_growth"; // to avoid JavaScript mistakes in demo version
   require_once("../layout/header.php");
@@ -118,7 +118,7 @@
 
   echo HTML::end('form');
 
-  echo HTML::para(HTML::link(_("Return"), $returnLocation));
+  echo HTML::para(HTML::link(_("Voltar"), $returnLocation));
 
   /**
    * Destroy form values and errors
