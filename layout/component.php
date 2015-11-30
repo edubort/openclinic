@@ -208,10 +208,10 @@
   function patientLinks($idPatient, $nav)
   {
     $linkList = array(
-      "relatives" => array(_("View Relatives"), "../medical/relative_list.php"),
+      "relatives" => array(_("Procurar relações"), "../medical/relative_list.php"),
       //"preventive" => array(_("Datos Preventivos"), ""), // I don't know how implement it
-      "history" => array(_("Clinic History"), "../medical/history_list.php"),
-      "problems" => array(_("Medical Problems Report"), "../medical/problem_list.php")
+      "history" => array(_("Geral"), "../medical/history_list.php"),
+      "problems" => array(_("Relatório Clínico"), "../medical/problem_list.php")
     );
 
     $array = null;
@@ -225,7 +225,7 @@
 
     $array[] = ($nav == "print")
       ? array(_("Print Medical Record"), array('class' => 'selected'))
-      : HTML::link(_("Print Medical Record"), '../medical/print_medical_record.php',
+      : HTML::link(_("Imprimir prontuário"), '../medical/print_medical_record.php',
           array('id_patient' => $idPatient),
           array('class' => 'popup')
         );

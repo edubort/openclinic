@@ -21,18 +21,18 @@
 
   $array = null;
 
-  $array[] = HTML::link(_("Summary"), '../medical/index.php', null,
+  $array[] = HTML::link(_("Tela inicial"), '../medical/index.php', null,
     $nav == 'summary' ? array('class' => 'selected') : null
   );
 
-  $array[] = HTML::link(_("Search Patient"), '../medical/patient_search_form.php', null,
+  $array[] = HTML::link(_("Procurar beneficiário"), '../medical/patient_search_form.php', null,
     ($nav == 'searchform' || $nav == 'search') ? array('class' => 'selected') : null
   );
 
   if ($nav == 'search')
   {
     //$array[] = array(HTML::link(_("Search Results"), '../medical/???.php', null, array('class' => 'selected')));
-    $array[] = array(HTML::tag('span', _("Search Results"), array('class' => 'selected')));
+    $array[] = array(HTML::tag('span', _("Resultados da busca"), array('class' => 'selected')));
   }
 
   if (defined("OPEN_DEMO") && !OPEN_DEMO)

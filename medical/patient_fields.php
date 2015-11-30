@@ -85,8 +85,8 @@
   $tbody[] = $row;
 
   $array = null;
-  $array['V'] = _("Male");
-  $array['H'] = _("Female");
+  $array['V'] = _("Masculino");
+  $array['H'] = _("Feminino");
 
   $row = Form::label("sex", _("Sexo") . ":");
   $row .= Form::select("sex", $array, $formVar["sex"]);

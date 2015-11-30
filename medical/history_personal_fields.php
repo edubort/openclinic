@@ -129,7 +129,7 @@
   $tbody[] = $row;
 
   $tfoot = array(
-    Form::button("update", _("Update"))
+    Form::button("update", _("Atualizar dados"))
     . Form::generateToken()
   );
 
