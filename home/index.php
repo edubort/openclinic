@@ -41,30 +41,30 @@
   echo HTML::para(_("OpenClinic is an easy to use, open source, medical records system."));
   echo HTML::para(_("When you select any of the following tabs you will be prompted to login."));
 
-  echo HTML::section(2, HTML::link(_("Medical Records"), '../medical/index.php'), array('class' => 'icon icon_medical'));
-  echo HTML::para(_("Use this tab to manage your patient's medical records."));
-  echo HTML::para(_("Patient's Administration:"));
+  echo HTML::section(2, HTML::link(_("Social"), '../medical/index.php'), array('class' => 'icon icon_medical'));
+  echo HTML::para(_("Utilize essa área para gerenciar e realizar os atendimentos aos beneficiários."));
+  echo HTML::para(_("Administração de pacientes:"));
 
   $array = array(
-    _("Search, new, delete, edit"),
-    _("Social Data"),
-    _("Clinic History"),
-    _("Problem Reports")
+    _("Pesquise, cadastre, apague ou edite seus beneficiários"),
+    _("Dados Sociais"),
+    _("Histórico dos atendimentos"),
+    _("Histórico dos problemas e diagnósticos")
   );
   echo HTML::itemList($array);
 
   echo HTML::rule();
 
   echo HTML::section(2, HTML::link(_("Admin"), '../admin/index.php'), array('class' => 'icon icon_admin'));
-  echo HTML::para(_("Use this tab to manage administrative options."));
+  echo HTML::para(_("Utilize essa aba para administrar usuários e outras configurações do sistema."));
 
   $array = array(
-    _("Staff members"),
-    _("Config settings"),
-    _("Clinic themes editor"),
-    _("System users"),
-    _("Dumps"),
-    _("Logs")
+    _("Membros de atendimento"),
+    _("Configurações do sistema"),
+    _("Editor de temas (não utilizar)"),
+    _("Usuários do sistema"),
+    _("Dumps (uso restrito ao técnico)"),
+    _("Logs (uso restrito ao técnico)")
   );
   echo HTML::itemList($array);
 

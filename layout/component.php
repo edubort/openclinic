@@ -66,7 +66,8 @@
   {
     $_links = array(
       "home" => array(_("Home"), "../home/index.php"),
-      "medical" => array(_("Medical Records"), "../medical/index.php"),
+      "add" => array(_("Adicionar beneficiário"), "../medical/patient_new_form.php"),
+      "medical" => array(_("Social"), "../medical/index.php"),
       //"stats" => array("Statistics", "../stats/index.php"),
       "admin" => array(_("Admin"), "../admin/index.php")
     );
