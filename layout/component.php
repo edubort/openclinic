@@ -301,7 +301,7 @@
       }
     }
 
-    $_links[] = HTML::link(_("OpenClinic Readme"), '../index.html');
+    //$_links[] = HTML::link(_("OpenClinic Readme"), '../index.html');
 
     /*if (isset($tab) && isset($nav))
     {
@@ -317,7 +317,7 @@
       );
     }*/
 
-
+/*
     if (isset($_SESSION['auth']['is_admin']) && ($_SESSION['auth']['is_admin'] === true && !OPEN_DEMO))
     {
       $_serverVar = (strpos(PHP_SAPI, 'cgi') !== false)
@@ -338,7 +338,7 @@
     {
       $_links[] = HTML::link(_("Demo version features"), '../demo_version.html');
     }
-
+*/
     $_html = HTML::itemList($_links, array('id' => 'shortcuts'));
 
     return $_html;
