@@ -24,7 +24,7 @@
   //$row .= I18n::localDate($formVar["last_update_date"]);
   //$tbody[] = $row;
 
-  $row = Form::label("nif", _("Protocolo atendimento") . ":");
+  $row = Form::label("nif", _("Número de registro") . ":");
   $row .= Form::text("nif",
     isset($formVar["nif"]) ? $formVar["nif"] : null,
     array(
@@ -34,7 +34,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("first_name", _("First Name") . ":", array('class' => 'required'));
+  $row = Form::label("first_name", _("Nome") . ":", array('class' => 'required'));
   $row .= Form::text("first_name",
     isset($formVar["first_name"]) ? $formVar["first_name"] : null,
     array(
@@ -54,7 +54,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("surname2", _("Nome do meio") . ":"/*, array('class' => 'required')*/);
+  $row = Form::label("surname2", _("Código SUS") . ":"/*, array('class' => 'required')*/);
   $row .= Form::text("surname2",
     isset($formVar["surname2"]) ? $formVar["surname2"] : null,
     array(
@@ -132,7 +132,7 @@
   }
   $tbody[] = $row;
 
-  $row = Form::label("birth_place", _("Birth Place") . ":");
+  $row = Form::label("birth_place", _("Natural de") . ":");
   $row .= Form::text("birth_place",
     isset($formVar["birth_place"]) ? $formVar["birth_place"] : null,
     array(
@@ -142,7 +142,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("dyear", _("Decease Date") . ":");
+  $row = Form::label("dyear", _("Data de entrada na Pestalozzi") . ":");
   $aux = explode("-", ( !empty($formVar["decease_date"]) ) ? $formVar["decease_date"] : '0000-00-00');
   
   $row .= Form::text("dday",
@@ -160,7 +160,7 @@
     array('size' => 4)
   );
   
-  $row .= " " . _("(dd-mm-yyyy)");
+  $row .= " " . _("(dd-mm-aaaa)");
   unset($aux);
   if ($formError["decease_date"] != "")
   {
@@ -188,7 +188,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("family_situation", _("Condição familiar") . ":");
+  $row = Form::label("family_situation", _("Informações complementares") . ":");
   $row .= Form::textArea("family_situation",
     $formVar["family_situation"],
     array(
@@ -208,7 +208,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("education", _("Educação") . ":");
+  $row = Form::label("education", _("Procedência do encaminhamento") . ":");
   $row .= Form::textArea("education",
     $formVar["education"],
     array(
