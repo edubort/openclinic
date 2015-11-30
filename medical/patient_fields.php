@@ -198,7 +198,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("labour_situation", _("Condição de trabalho") . ":");
+  $row = Form::label("labour_situation", _("Trabalho dos familiares") . ":");
   $row .= Form::textArea("labour_situation",
     $formVar["labour_situation"],
     array(
@@ -218,7 +218,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("insurance_company", _("Quadro inicial") . ":");
+  $row = Form::label("insurance_company", _("CID") . ":");
   $row .= Form::text("insurance_company",
     isset($formVar["insurance_company"]) ? $formVar["insurance_company"] : null,
     array(
