@@ -19,7 +19,7 @@ require_once("../config/i18n.php");
 
 header("Content-Type: text/javascript; charset=" . OPEN_CHARSET);
 
-$field = Check::safeText($_GET['field']);
+$field = ($_GET['field']);
 ?>
 if (typeof addEvent == 'function')
 {

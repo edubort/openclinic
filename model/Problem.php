@@ -247,7 +247,7 @@ class Problem
    */
   function setCollegiateNumber($value)
   {
-    $this->_collegiateNumber = Check::safeText($value);
+    $this->_collegiateNumber = ($value);
   }
 
   /**
@@ -270,7 +270,7 @@ class Problem
    */
   function setOpeningDate($value)
   {
-    $this->_openingDate = Check::safeText($value);
+    $this->_openingDate = ($value);
   }
 
   /**
@@ -293,7 +293,7 @@ class Problem
    */
   function setClosingDate($value)
   {
-    $temp = Check::safeText($value);
+    $temp = ($value);
     $this->_closingDate = (($temp == "" || $temp == "0000-00-00") ? "0000-00-00" : $temp);
   }
 
@@ -317,7 +317,7 @@ class Problem
    */
   function setMeetingPlace($value)
   {
-    $this->_meetingPlace = Check::safeText($value);
+    $this->_meetingPlace = ($value);
   }
 
   /**
@@ -351,7 +351,7 @@ class Problem
    */
   function setWording($value)
   {
-    $this->_wording = Check::safeText($value);
+    $this->_wording = ($value);
   }
 
   /**
@@ -374,7 +374,7 @@ class Problem
    */
   function setSubjective($value)
   {
-    $this->_subjective = Check::safeText($value);
+    $this->_subjective = ($value);
   }
 
   /**
@@ -397,7 +397,7 @@ class Problem
    */
   function setObjective($value)
   {
-    $this->_objective = Check::safeText($value);
+    $this->_objective = ($value);
   }
 
   /**
@@ -420,7 +420,7 @@ class Problem
    */
   function setAppreciation($value)
   {
-    $this->_appreciation = Check::safeText($value);
+    $this->_appreciation = ($value);
   }
 
   /**
@@ -443,7 +443,7 @@ class Problem
    */
   function setActionPlan($value)
   {
-    $this->_actionPlan = Check::safeText($value);
+    $this->_actionPlan = ($value);
   }
 
   /**
@@ -466,7 +466,7 @@ class Problem
    */
   function setPrescription($value)
   {
-    $this->_prescription = Check::safeText($value);
+    $this->_prescription = ($value);
   }
 
   /**
@@ -489,7 +489,7 @@ class Problem
    */
   function setLastUpdateDate($value)
   {
-    $this->_lastUpdateDate = Check::safeText($value);
+    $this->_lastUpdateDate = ($value);
   }
 
   /**

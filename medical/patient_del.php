@@ -49,7 +49,7 @@
    * Retrieving post vars
    */
   $idPatient = intval($_POST["id_patient"]);
-  $patName = Check::safeText($_POST["name"]);
+  $patName = ($_POST["name"]);
 
   /**
    * Prevent user from aborting script

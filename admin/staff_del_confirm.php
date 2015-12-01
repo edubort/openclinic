@@ -43,9 +43,9 @@
    * Retrieving get vars
    */
   $idMember = intval($_GET["id_member"]);
-  $surname1 = Check::safeText($_GET["surname1"]);
-  $surname2 = Check::safeText($_GET["surname2"]);
-  $firstName = Check::safeText($_GET["first_name"]);
+  $surname1 = ($_GET["surname1"]);
+  $surname2 = ($_GET["surname2"]);
+  $firstName = ($_GET["first_name"]);
 
   /**
    * Show page

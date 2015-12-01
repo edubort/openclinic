@@ -42,7 +42,7 @@
    * Retrieving get vars
    */
   $idTheme = intval($_GET["id_theme"]);
-  $name = Check::safeText($_GET["name"]);
+  $name = ($_GET["name"]);
 
   /**
    * Show page

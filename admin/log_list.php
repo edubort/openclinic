@@ -41,7 +41,7 @@
   /**
    * Retrieving get vars
    */
-  $table = isset($_GET['table']) ? Check::safeText($_GET['table']) : 'access';
+  $table = isset($_GET['table']) ? ($_GET['table']) : 'access';
   $year = (isset($_GET["year"])) ? intval($_GET["year"]) : 0;
   $month = (isset($_GET["month"])) ? intval($_GET["month"]) : 0;
   $day = (isset($_GET["day"])) ? intval($_GET["day"]) : 0;

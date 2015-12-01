@@ -42,7 +42,7 @@
   $idProblem = intval($_POST["id_problem"]);
   $idConnection = intval($_POST["id_connection"]);
   $idPatient = intval($_POST["id_patient"]);
-  $wording = Check::safeText($_POST["wording"]);
+  $wording = ($_POST["wording"]);
 
   /**
    * Prevent user from aborting script

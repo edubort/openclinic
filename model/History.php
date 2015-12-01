@@ -297,7 +297,7 @@ class History
    */
   public function setBirthGrowth($value)
   {
-    $this->_birthGrowth = Check::safeText($value);
+    $this->_birthGrowth = ($value);
   }
 
   /**
@@ -309,7 +309,7 @@ class History
    */
   public function setGrowthSexuality($value)
   {
-    $this->_growthSexuality = Check::safeText($value);
+    $this->_growthSexuality = ($value);
   }
 
   /**
@@ -321,7 +321,7 @@ class History
    */
   public function setFeed($value)
   {
-    $this->_feed = Check::safeText($value);
+    $this->_feed = ($value);
   }
 
   /**
@@ -333,7 +333,7 @@ class History
    */
   public function setHabits($value)
   {
-    $this->_habits = Check::safeText($value);
+    $this->_habits = ($value);
   }
 
   /**
@@ -345,7 +345,7 @@ class History
    */
   public function setPeristalticConditions($value)
   {
-    $this->_peristalticConditions = Check::safeText($value);
+    $this->_peristalticConditions = ($value);
   }
 
   /**
@@ -357,7 +357,7 @@ class History
    */
   public function setPsychological($value)
   {
-    $this->_psychological = Check::safeText($value);
+    $this->_psychological = ($value);
   }
 
   /**
@@ -369,7 +369,7 @@ class History
    */
   public function setChildrenComplaint($value)
   {
-    $this->_childrenComplaint = Check::safeText($value);
+    $this->_childrenComplaint = ($value);
   }
 
   /**
@@ -381,7 +381,7 @@ class History
    */
   public function setVenerealDisease($value)
   {
-    $this->_venerealDisease = Check::safeText($value);
+    $this->_venerealDisease = ($value);
   }
 
   /**
@@ -393,7 +393,7 @@ class History
    */
   public function setAccidentSurgicalOperation($value)
   {
-    $this->_accidentSurgicalOperation = Check::safeText($value);
+    $this->_accidentSurgicalOperation = ($value);
   }
 
   /**
@@ -405,7 +405,7 @@ class History
    */
   public function setMedicinalIntolerance($value)
   {
-    $this->_medicinalIntolerance = Check::safeText($value);
+    $this->_medicinalIntolerance = ($value);
   }
 
   /**
@@ -417,7 +417,7 @@ class History
    */
   public function setMentalIllness($value)
   {
-    $this->_mentalIllness = Check::safeText($value);
+    $this->_mentalIllness = ($value);
   }
 
   /**
@@ -429,7 +429,7 @@ class History
    */
   public function setParentsStatusHealth($value)
   {
-    $this->_parentsStatusHealth = Check::safeText($value);
+    $this->_parentsStatusHealth = ($value);
   }
 
   /**
@@ -441,7 +441,7 @@ class History
    */
   public function setBrothersStatusHealth($value)
   {
-    $this->_brothersStatusHealth = Check::safeText($value);
+    $this->_brothersStatusHealth = ($value);
   }
 
   /**
@@ -453,7 +453,7 @@ class History
    */
   public function setSpouseChildsStatusHealth($value)
   {
-    $this->_spouseChildsStatusHealth = Check::safeText($value);
+    $this->_spouseChildsStatusHealth = ($value);
   }
 
   /**
@@ -465,7 +465,7 @@ class History
    */
   public function setFamilyIllness($value)
   {
-    $this->_familyIllness = Check::safeText($value);
+    $this->_familyIllness = ($value);
   }
 
   /**

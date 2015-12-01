@@ -105,7 +105,7 @@ class Description
    */
   public function setCode($value)
   {
-    $this->_code = Check::safeText($value);
+    $this->_code = ($value);
   }
 
   /**
@@ -117,7 +117,7 @@ class Description
    */
   public function setDescription($value)
   {
-    $this->_description = Check::safeText($value);
+    $this->_description = ($value);
   }
 
   /**

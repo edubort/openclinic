@@ -39,7 +39,7 @@
     Form::compareToken('./index.php');
 
     // @fixme gecko browsers (Mozilla 1.7.8) cause to disappear CR/LF (and I don't know why)
-    /*$_POST['sql_query'] = Check::safeText($_POST['sql_query'], false);
+    /*$_POST['sql_query'] = ($_POST['sql_query'], false);
     if (get_magic_quotes_gpc())
     {
       $_POST['sql_query'] = stripslashes($_POST['sql_query']);
@@ -70,7 +70,7 @@
   if (isset($_POST['view_file']) && !empty($_FILES['sql_file']['name']) && $_FILES['sql_file']['size'] > 0)
   {
     $sqlQuery = file_get_contents($_FILES['sql_file']['tmp_name']);
-    //$sqlQuery = Check::safeText($sqlQuery, false);
+    //$sqlQuery = ($sqlQuery, false);
 
     echo HTML::start('form', array('method' => 'post', 'action' => $_SERVER['PHP_SELF']));
 

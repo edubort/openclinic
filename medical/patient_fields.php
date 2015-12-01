@@ -249,7 +249,7 @@
   $tbody[] = $row;
 
   $tfoot = array(
-    Form::button("save", _("Submit"))
+    Form::button("save", _("Gravar dados"))
     . Form::generateToken()
   );
 

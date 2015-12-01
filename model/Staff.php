@@ -243,7 +243,7 @@ class Staff
    */
   public function setCollegiateNumber($value)
   {
-    $this->_collegiateNumber = Check::safeText($value);
+    $this->_collegiateNumber = ($value);
   }
 
   /**
@@ -277,7 +277,7 @@ class Staff
    */
   public function setNIF($value)
   {
-    $this->_nif = Check::safeText($value);
+    $this->_nif = ($value);
   }
 
   /**
@@ -311,7 +311,7 @@ class Staff
    */
   public function setFirstName($value)
   {
-    $this->_firstName = Check::safeText($value);
+    $this->_firstName = ($value);
   }
 
   /**
@@ -345,7 +345,7 @@ class Staff
    */
   public function setSurname1($value)
   {
-    $this->_surname1 = Check::safeText($value);
+    $this->_surname1 = ($value);
   }
 
   /**
@@ -379,7 +379,7 @@ class Staff
    */
   public function setSurname2($value)
   {
-    $this->_surname2 = Check::safeText($value);
+    $this->_surname2 = ($value);
   }
 
   /**
@@ -414,7 +414,7 @@ class Staff
   public function setLogin($value)
   {
     $value = strtolower($value); // sure?
-    $this->_login = Check::safeText($value);
+    $this->_login = ($value);
   }
 
   /**
@@ -437,7 +437,7 @@ class Staff
    */
   public function setAddress($value)
   {
-    $this->_address = Check::safeText($value);
+    $this->_address = ($value);
   }
 
   /**
@@ -460,7 +460,7 @@ class Staff
    */
   public function setPhone($value)
   {
-    $this->_phone = Check::safeText($value);
+    $this->_phone = ($value);
   }
 
   /**

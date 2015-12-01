@@ -36,7 +36,7 @@
   {
     Form::compareToken($returnLocation);
 
-    $array = explode(OPEN_SEPARATOR, Check::safeText($_POST["id_member_login"]), 2);
+    $array = explode(OPEN_SEPARATOR, ($_POST["id_member_login"]), 2);
     $idMember = $array[0];
     $formVar["id_member"] = $idMember;
     $login = $array[1];
@@ -47,7 +47,7 @@
   {
     $idMember = intval($_GET["id_member"]);
     $formVar["id_member"] = $idMember;
-    $login = Check::safeText($_GET["login"]);
+    $login = ($_GET["login"]);
     $formVar["login"] = $login;
   }
   else // something wrong in fields...

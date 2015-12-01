@@ -41,7 +41,7 @@
   $idProblem = intval($_POST["id_problem"]);
   $idTest = intval($_POST["id_test"]);
   $idPatient = intval($_POST["id_patient"]);
-  $file = Check::safeText($_POST["path_filename"]);
+  $file = ($_POST["path_filename"]);
 
   /**
    * Prevent user from aborting script

@@ -242,7 +242,7 @@ class User
   public function setLogin($value)
   {
     $value = strtolower($value); // sure?
-    $this->_login = Check::safeText($value);
+    $this->_login = ($value);
   }
 
   /**
@@ -276,7 +276,7 @@ class User
    */
   public function setPwd($value)
   {
-    $this->_pwd = Check::safeText($value);
+    $this->_pwd = ($value);
   }
 
   /**
@@ -299,7 +299,7 @@ class User
    */
   public function setPwd2($value)
   {
-    $this->_pwd2 = Check::safeText($value);
+    $this->_pwd2 = ($value);
   }
 
   /**
@@ -333,7 +333,7 @@ class User
    */
   public function setEmail($value)
   {
-    $this->_email = Check::safeText($value);
+    $this->_email = ($value);
   }
 
   /**

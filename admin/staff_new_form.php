@@ -31,7 +31,7 @@
   /**
    * Show page
    */
-  $memberType = (isset($_GET["type"])) ? Check::safeText($_GET["type"]) : "A"; // Administrative by default
+  $memberType = (isset($_GET["type"])) ? ($_GET["type"]) : "A"; // Administrative by default
 
   switch (strtolower($memberType))
   {

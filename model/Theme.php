@@ -158,7 +158,7 @@ class Theme
    */
   public function setName($value)
   {
-    $this->_name = Check::safeText($value);
+    $this->_name = ($value);
   }
 
   /**
@@ -193,7 +193,7 @@ class Theme
   public function setCssFile($value)
   {
     $value = strtolower($value); // sure?
-    $this->_cssFile = Check::safeText($value);
+    $this->_cssFile = ($value);
   }
 
   /**
@@ -227,7 +227,7 @@ class Theme
    */
   public function setCssRules($value)
   {
-    $this->_cssRules = Check::safeText($value);
+    $this->_cssRules = ($value);
   }
 
   /**

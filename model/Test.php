@@ -165,7 +165,7 @@ class Test
   public function setDocumentType($value)
   {
     //$value = strtolower($value);
-    $this->_documentType = Check::safeText($value);
+    $this->_documentType = ($value);
   }
 
   /**

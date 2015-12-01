@@ -30,7 +30,7 @@
   /**
    * Retrieving get vars
    */
-  $memberType = (isset($_GET["type"]) ? Check::safeText($_GET["type"]) : "");
+  $memberType = (isset($_GET["type"]) ? ($_GET["type"]) : "");
 
   /**
    * Show page

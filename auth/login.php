@@ -37,7 +37,7 @@
    * Login edits
    */
   $errorFound = false;
-  $loginSession = urlencode(Check::safeText($_POST["login_session"]));
+  $loginSession = urlencode(($_POST["login_session"]));
   if ($loginSession == "")
   {
     $errorFound = true;
@@ -47,10 +47,10 @@
   /**
    * Password edits
    */
-  $pwdSession = Check::safeText($_POST["md5_session"]);
+  $pwdSession = ($_POST["md5_session"]);
   if ($pwdSession == "")
   {
-    $pwdSession = Check::safeText($_POST["pwd_session"]); // JavaScript disabled?
+    $pwdSession = ($_POST["pwd_session"]); // JavaScript disabled?
     if ($pwdSession == "")
     {
       $errorFound = true;

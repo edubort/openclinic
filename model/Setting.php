@@ -133,7 +133,7 @@ class Setting
    */
   public function setClinicName($value)
   {
-    $this->_clinicName = Check::safeText($value);
+    $this->_clinicName = ($value);
   }
 
   /**
@@ -156,7 +156,7 @@ class Setting
    */
   public function setClinicHours($value)
   {
-    $this->_clinicHours = Check::safeText($value);
+    $this->_clinicHours = ($value);
   }
 
   /**
@@ -179,7 +179,7 @@ class Setting
    */
   public function setClinicAddress($value)
   {
-    $this->_clinicAddress = Check::safeText($value);
+    $this->_clinicAddress = ($value);
   }
 
   /**
@@ -202,7 +202,7 @@ class Setting
    */
   public function setClinicPhone($value)
   {
-    $this->_clinicPhone = Check::safeText($value);
+    $this->_clinicPhone = ($value);
   }
 
   /**
@@ -225,7 +225,7 @@ class Setting
    */
   public function setClinicUrl($value)
   {
-    $this->_clinicUrl = Check::safeText($value);
+    $this->_clinicUrl = ($value);
   }
 
   /**
@@ -318,7 +318,7 @@ class Setting
    */
   public function setVersion($value)
   {
-    $this->_version = Check::safeText($value);
+    $this->_version = ($value);
   }
 
   /**
@@ -341,7 +341,7 @@ class Setting
    */
   public function setLanguage($value)
   {
-    $this->_lang = Check::safeText($value);
+    $this->_lang = ($value);
   }
 
   /**

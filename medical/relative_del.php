@@ -41,7 +41,7 @@
    */
   $idPatient = intval($_POST["id_patient"]);
   $idRelative = intval($_POST["id_relative"]);
-  $relName = Check::safeText($_POST["name"]);
+  $relName = ($_POST["name"]);
 
   /**
    * Prevent user from aborting script

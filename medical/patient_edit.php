@@ -36,7 +36,7 @@
    */
   $idPatient = intval($_POST["id_patient"]);
   $errorLocation = "../medical/patient_edit_form.php?key=" . $idPatient; // controlling var
-  $patName = urldecode(Check::safeText($_POST["first_name"] . " " . $_POST["surname1"] . " " . $_POST["surname2"]));
+  $patName = urldecode(($_POST["first_name"] . " " . $_POST["surname1"] . " " . $_POST["surname2"]));
 
   $pat = new Patient();
 
@@ -65,7 +65,7 @@
   {
     $patQ->close();
 
-    FlashMsg::add(sprintf(_("Patient name, %s, is already in use. The changes have no effect."), $patName),
+    FlashMsg::add(sprintf(_("O nome do beneficiário, %s, está em uso. As mudanças não terão efeito."), $patName),
       OPEN_MSG_WARNING
     );
     header("Location: " . $returnLocation);
@@ -94,6 +94,6 @@
   /**
    * Redirect to $returnLocation to avoid reload problem
    */
-  FlashMsg::add(_("Patient has been updated."));
+  FlashMsg::add(_("Beneficiário atualizado com sucesso."));
   header("Location: " . $returnLocation);
 ?>

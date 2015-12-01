@@ -28,7 +28,7 @@
    */
   if (isset($_GET["ret"]))
   {
-    $_SESSION['auth']['return_page'] = Check::safeText($_GET["ret"]);
+    $_SESSION['auth']['return_page'] = ($_GET["ret"]);
   }
 
   /**

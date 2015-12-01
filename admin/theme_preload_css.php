@@ -49,7 +49,7 @@
   if (!empty($_FILES['css_filename']['name']) && $_FILES['css_filename']['size'] > 0)
   {
     $cssRules = fread(fopen($_FILES['css_filename']['tmp_name'], 'r'), $_FILES['css_filename']['size']);
-    $cssRules = Check::safeText($cssRules, false);
+    $cssRules = ($cssRules, false);
 
     //Error::debug($cssRules);
     $_POST['css_file'] = $_FILES['css_filename']['name'];

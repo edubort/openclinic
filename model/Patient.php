@@ -157,19 +157,19 @@ class Patient
     if ($this->_firstName == "")
     {
       $valid = false;
-      $this->_firstNameError = _("This is a required field.");
+      $this->_firstNameError = _("Este campo é obrigatório.");
     }
 
     if ($this->_surname1 == "")
     {
       $valid = false;
-      $this->_surname1Error = _("This is a required field.");
+      $this->_surname1Error = _("Este campo é obrigatório.");
     }
 
     /*if ($this->_surname2 == "")
     {
       $valid = false;
-      $this->_surname2Error = _("This is a required field.");
+      $this->_surname2Error = _("Este campo é obrigatório.");
     }*/
 
     if ($this->_birthDate != "" && $this->_birthDate != "0000-00-00")
@@ -178,7 +178,7 @@ class Patient
       if ( !checkdate($month, $day, $year) )
       {
         $valid = false;
-        $this->_birthDateError = _("This field is not correct.");
+        $this->_birthDateError = _("Este campo não está correto..");
       }
     }
 
@@ -188,14 +188,14 @@ class Patient
       if ( !checkdate($month, $day, $year) )
       {
         $valid = false;
-        $this->_deceaseDateError = _("This field is not correct.");
+        $this->_deceaseDateError = _("Este campo não está correto..");
       }
     }
 
     if (($this->_birthDate != "" && $this->_birthDate != "0000-00-00" && $this->_deceaseDate != "" && $this->_deceaseDate != "0000-00-00") && ($this->_birthDate > $this->_deceaseDate))
     {
       $valid = false;
-      $this->_deceaseDateError = sprintf(_("%s must be greater or equal than %s."), _("Decease Date"), _("Birth Date"));
+      $this->_deceaseDateError = sprintf(_("%s deve ser maior ou igual a %s."), _("Decease Date"), _("Birth Date"));
     }
 
     return $valid;
@@ -267,7 +267,7 @@ class Patient
    */
   public function setCollegiateNumber($value)
   {
-    $this->_collegiateNumber = Check::safeText($value);
+    $this->_collegiateNumber = ($value);
   }
 
   /**
@@ -290,7 +290,7 @@ class Patient
    */
   public function setNIF($value)
   {
-    $this->_nif = Check::safeText($value);
+    $this->_nif = ($value);
   }
 
   /**
@@ -324,7 +324,7 @@ class Patient
    */
   public function setFirstName($value)
   {
-    $this->_firstName = Check::safeText($value);
+    $this->_firstName = ($value);
   }
 
   /**
@@ -358,7 +358,7 @@ class Patient
    */
   public function setSurname1($value)
   {
-    $this->_surname1 = Check::safeText($value);
+    $this->_surname1 = ($value);
   }
 
   /**
@@ -392,7 +392,7 @@ class Patient
    */
   public function setSurname2($value)
   {
-    $this->_surname2 = Check::safeText($value);
+    $this->_surname2 = ($value);
   }
 
   /**
@@ -429,7 +429,8 @@ class Patient
    */
   public function setAddress($value)
   {
-    $this->_address = Check::safeText($value);
+    /*$this->_address = ($value);*/
+    $this->_address = ($value);
   }
 
   /**
@@ -452,7 +453,7 @@ class Patient
    */
   public function setPhone($value)
   {
-    $this->_phone = Check::safeText($value);
+    $this->_phone = ($value);
   }
 
   /**
@@ -475,7 +476,7 @@ class Patient
    */
   public function setSex($value)
   {
-    $this->_sex = Check::safeText($value);
+    $this->_sex = ($value);
   }
 
   /**
@@ -498,7 +499,7 @@ class Patient
    */
   public function setRace($value)
   {
-    $this->_race = Check::safeText($value);
+    $this->_race = ($value);
   }
 
   /**
@@ -532,7 +533,7 @@ class Patient
    */
   public function setBirthDate($value)
   {
-    $this->_birthDate = Check::safeText($value);
+    $this->_birthDate = ($value);
   }
 
   /**
@@ -596,7 +597,7 @@ class Patient
    */
   public function setBirthPlace($value)
   {
-    $this->_birthPlace = Check::safeText($value);
+    $this->_birthPlace = ($value);
   }
 
   /**
@@ -630,7 +631,7 @@ class Patient
    */
   public function setDeceaseDate($value)
   {
-    $this->_deceaseDate = Check::safeText($value);
+    $this->_deceaseDate = ($value);
   }
 
   /**
@@ -671,7 +672,7 @@ class Patient
    */
   public function setNTS($value)
   {
-    $this->_nts = Check::safeText($value);
+    $this->_nts = ($value);
   }
 
   /**
@@ -694,7 +695,7 @@ class Patient
    */
   public function setNSS($value)
   {
-    $this->_nss = Check::safeText($value);
+    $this->_nss = ($value);
   }
 
   /**
@@ -717,7 +718,7 @@ class Patient
    */
   public function setFamilySituation($value)
   {
-    $this->_familySituation = Check::safeText($value);
+    $this->_familySituation = ($value);
   }
 
   /**
@@ -740,7 +741,7 @@ class Patient
    */
   public function setLabourSituation($value)
   {
-    $this->_labourSituation = Check::safeText($value);
+    $this->_labourSituation = ($value);
   }
 
   /**
@@ -763,7 +764,7 @@ class Patient
    */
   public function setEducation($value)
   {
-    $this->_education = Check::safeText($value);
+    $this->_education = ($value);
   }
 
   /**
@@ -786,7 +787,7 @@ class Patient
    */
   public function setInsuranceCompany($value)
   {
-    $this->_insuranceCompany = Check::safeText($value);
+    $this->_insuranceCompany = ($value);
   }
 
   /**
@@ -809,7 +810,7 @@ class Patient
    */
 /*  public function setLastUpdateDate($value)
   {
-    $this->_lastUpdateDate = Check::safeText($value);
+    $this->_lastUpdateDate = ($value);
   }*/
 
   /**

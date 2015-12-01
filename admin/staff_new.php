@@ -19,7 +19,7 @@
   /**
    * Controlling vars
    */
-  $errorLocation = "../admin/staff_new_form.php?type=" . Check::safeText($_GET['type']);
+  $errorLocation = "../admin/staff_new_form.php?type=" . ($_GET['type']);
   $returnLocation = "../admin/staff_list.php";
 
   /**

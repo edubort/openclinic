@@ -42,7 +42,7 @@
    * Retrieving get vars
    */
   $idUser = intval($_GET["id_user"]);
-  $login = Check::safeText($_GET["login"]);
+  $login = ($_GET["login"]);
 
   /**
    * Show page

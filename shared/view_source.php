@@ -24,7 +24,7 @@
   /**
    * Retrieving get var
    */
-  $_file = Check::safeText($_GET['file']);
+  $_file = ($_GET['file']);
 
   /**
    * XHTML Start (XML prolog, DOCTYPE, title page and meta data)
