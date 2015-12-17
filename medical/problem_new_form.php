@@ -64,9 +64,9 @@
    * Breadcrumb
    */
   $links = array(
-    _("Medical Records") => "../medical/index.php",
+    _("Registros do atendimento") => "../medical/index.php",
     $patient->getName() => "../medical/patient_view.php",
-    _("Medical Problems Report") => $returnLocation,
+    _("Informações complementares") => $returnLocation,
     $title => ""
   );
   echo HTML::breadcrumb($links, "icon icon_patient");

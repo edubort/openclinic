@@ -44,7 +44,7 @@
   /**
    * Show page
    */
-  $title = _("Clinic History");
+  $title = _("Histórico do beneficiário");
   $titlePage = $patient->getName() . ' (' . $title . ')';
   require_once("../layout/header.php");
 
@@ -73,7 +73,7 @@
 
   echo HTML::rule();
 
-  echo HTML::section(2, _("Closed Medical Problems List:"));
+  echo HTML::section(2, _("Lista de cenários clínicos do beneficiário:"));
 
   $problemQ = new Query_Page_Problem();
   if ( !$problemQ->selectProblems($idPatient, true) )

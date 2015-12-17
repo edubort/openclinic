@@ -20,6 +20,9 @@ executionProtection(__FILE__);
 require_once("../config/environment.php");
 require_once("../model/Query/Session.php");
 
+
+$userArray = array("admin", "edubort", "psico");
+
 /**
  * void loginCheck(int $profilePage = OPEN_PROFILE_FREE, bool $inDemo = true)
  *

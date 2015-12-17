@@ -211,8 +211,8 @@
     $linkList = array(
       "relatives" => array(_("Procurar relações"), "../medical/relative_list.php"),
       //"preventive" => array(_("Datos Preventivos"), ""), // I don't know how implement it
-      "history" => array(_("Geral"), "../medical/history_list.php"),
-      "problems" => array(_("Relatório Clínico"), "../medical/problem_list.php")
+      "history" => array(_("Relatório Clínico"), "../medical/history_list.php"),
+      "problems" => array(_("Atendimento"), "../medical/problem_list.php")
     );
 
     $array = null;

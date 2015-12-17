@@ -68,13 +68,13 @@
 
   if ($problem->getClosingDate(false))
   {
-    FlashMsg::add(sprintf(_("Medical problem, %s, has been added to closed medical problems list."),
+    FlashMsg::add(sprintf(_("Informações adicionais, %s, foram incluídos no prontuário do funcionário."),
       $problem->getWording())
     );
   }
   else
   {
-    FlashMsg::add(sprintf(_("Medical problem, %s, has been updated."), $problem->getWording()));
+    FlashMsg::add(sprintf(_("%s, dados atualizados."), $problem->getWording()));
   }
 
   $problemQ->close();

@@ -37,7 +37,7 @@
   $patient = new Patient($idPatient);
   if ($patient->getName() == '')
   {
-    FlashMsg::add(_("That patient does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("O beneficiário em questão não possui cadastro."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -45,7 +45,7 @@
   $problem = new Problem($idProblem);
   if ( !$problem )
   {
-    FlashMsg::add(_("That medical problem does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("Nenhum atendimento foi realizado até o momento."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -71,7 +71,7 @@
   /**
    * Show page
    */
-  $title = _("Edit Medical Problem");
+  $title = _("Editar Atendimento");
   $titlePage = $patient->getName() . ' [' . $problem->getWordingPreview() . '] (' . $title . ')';
   $focusFormField = "wording"; // to avoid JavaScript mistakes in demo version
   require_once("../layout/header.php");
@@ -83,9 +83,9 @@
    * Breadcrumb
    */
   $links = array(
-    _("Medical Records") => "../medical/index.php",
+    _("Registro do Atendimento") => "../medical/index.php",
     $patient->getName() => "../medical/problem_view.php",
-    _("Medical Problems Report") => "../medical/problem_list.php",
+    _("Outras informações") => "../medical/problem_list.php",
     $problem->getWordingPreview() => $returnLocation,
     $title => ""
   );
@@ -109,7 +109,7 @@
 
   echo HTML::end('form');
 
-  echo Msg::hint('* ' . _("Note: The fields with * are required."));
+  echo Msg::hint('* ' . _("Importante: Os campos com * são obrigatórios."));
 
   echo HTML::para(HTML::link(_("Return"), $returnLocation));
 

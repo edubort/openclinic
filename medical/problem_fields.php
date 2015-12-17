@@ -20,19 +20,19 @@
 
   $tbody = array();
 
-  $row = _("Order Number") . ": ";
+  $row = _("Código do atendimento") . ": ";
   $row .= $formVar["order_number"];
   $tbody[] = $row;
 
-  $row = _("Opening Date") . ": ";
+  $row = _("Data de inclusão") . ": ";
   $row .= I18n::localDate($formVar["opening_date"]);
   $tbody[] = $row;
 
-  $row = _("Last Update Date") . ": ";
+  $row = _("Última atualização") . ": ";
   $row .= I18n::localDate($formVar["last_update_date"]);
   $tbody[] = $row;
 
-  $row = Form::label("id_member", _("Attending Physician") . ":");
+  $row = Form::label("id_member", _("Profissional atendente") . ":");
 
   $staffQ = new Query_Staff();
 
@@ -53,7 +53,7 @@
   unset($array);
   $tbody[] = $row;
 
-  $row = Form::label("meeting_place", _("Meeting Place") . ":");
+  $row = Form::label("meeting_place", _("Local e Data de atendimento") . ":");
   $row .= Form::text("meeting_place",
     isset($formVar["meeting_place"]) ? $formVar["meeting_place"] : null,
     array(
@@ -63,7 +63,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("wording", _("Wording") . ":", array('class' => 'required'));
+  $row = Form::label("wording", _("Resumo") . ":", array('class' => 'required'));
   $row .= Form::textArea("wording",
     isset($formVar["wording"]) ? $formVar["wording"] : null,
     array(
@@ -74,7 +74,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("subjective", _("Subjective") . ":");
+  $row = Form::label("subjective", _("Informações pedagógicas") . ":");
   $row .= Form::textArea("subjective",
     isset($formVar["subjective"]) ? $formVar["subjective"] : null,
     array(
@@ -84,17 +84,20 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("objective", _("Objective") . ":");
-  $row .= Form::textArea("objective",
-    isset($formVar["objective"]) ? $formVar["objective"] : null,
-    array(
-      'rows' => 4,
-      'cols' => 90
-    )
-  );
+  if (in_array($_SESSION['auth']['login_session'], $userArray)) {
+    $row = Form::label("objective", _("Informações psicológicas (Campo restrito ao psicologo)") . ":");
+    $row .= Form::textArea("objective",
+      isset($formVar["objective"]) ? $formVar["objective"] : null,
+      array(
+        'rows' => 4,
+        'cols' => 90
+      )
+    );
+  }
+  
   $tbody[] = $row;
 
-  $row = Form::label("appreciation", _("Appreciation") . ":");
+  $row = Form::label("appreciation", _("Evoluções") . ":");
   $row .= Form::textArea("appreciation",
     isset($formVar["appreciation"]) ? $formVar["appreciation"] : null,
     array(
@@ -104,7 +107,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("action_plan", _("Action Plan") . ":");
+  $row = Form::label("action_plan", _("Próximos passos") . ":");
   $row .= Form::textArea("action_plan",
     isset($formVar["action_plan"]) ? $formVar["action_plan"] : null,
     array(
@@ -114,7 +117,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("prescription", _("Prescription") . ":");
+  $row = Form::label("prescription", _("Prescrições") . ":");
   $row .= Form::textArea("prescription",
     isset($formVar["prescription"]) ? $formVar["prescription"] : null,
     array(
@@ -124,7 +127,7 @@
   );
   $tbody[] = $row;
 
-  $row = Form::label("closed_problem", _("Closed Problem") . ":");
+  $row = Form::label("closed_problem", _("<font color=red>Marque <u>somente se</u> o atendimento estiver concluído</font>") . ":");
   $row .= Form::checkBox("closed_problem", "closed",
     array('checked' => isset($formVar["closed_problem"]) ? $formVar["closed_problem"] != "" : false)
   );

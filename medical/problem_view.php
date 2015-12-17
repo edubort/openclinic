@@ -38,7 +38,7 @@
   $patient = new Patient($idPatient);
   if ($patient->getName() == '')
   {
-    FlashMsg::add(_("That patient does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("O beneficiário não existe."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -46,7 +46,7 @@
   $problem = new Problem($idProblem);
   if ( !$problem )
   {
-    FlashMsg::add(_("That medical problem does not exist."), OPEN_MSG_ERROR);
+    FlashMsg::add(_("O registro procurado não existe."), OPEN_MSG_ERROR);
     header("Location: ../medical/patient_search_form.php");
     exit();
   }
@@ -73,11 +73,11 @@
    * Breadcrumb
    */
   $links = array(
-    _("Medical Records") => "../medical/index.php",
+    _("Registros do benficiário") => "../medical/index.php",
     $patient->getName() => "../medical/patient_view.php",
     (($nav == "problems")
-      ? _("Medical Problems Report")
-      : _("Clinic History")) => (($nav == "problems")
+      ? _("Informações adicionais")
+      : _("Histórico do beneficiário")) => (($nav == "problems")
         ? "../medical/problem_list.php"
         : "../medical/history_list.php"),
     $title => ""
@@ -92,7 +92,7 @@
   {
     if ($problem->getClosingDate() == "" || $problem->getClosingDate() == '0000-00-00')
     {
-      $relatedLinks .= HTML::link(_("Edit Medical Problem Data"), '../medical/problem_edit_form.php',
+      $relatedLinks .= HTML::link(_("Editar dados clínicos"), '../medical/problem_edit_form.php',
         array(
           'id_problem' => $idProblem,
           'id_patient' => $idPatient
@@ -100,7 +100,7 @@
       );
       $relatedLinks .= ' | ';
     }
-    $relatedLinks .= HTML::link(_("Delete Medical Problem"), '../medical/problem_del_confirm.php',
+    $relatedLinks .= HTML::link(_("Excluir registro"), '../medical/problem_del_confirm.php',
       array(
         'id_problem' => $idProblem,
         'id_patient' => $idPatient
@@ -108,14 +108,14 @@
     );
     $relatedLinks .= ' | ';
   }
-  $relatedLinks .= HTML::link(_("View Connection Problems"), '../medical/connection_list.php',
+  $relatedLinks .= HTML::link(_("Ver atendimentos cruzados"), '../medical/connection_list.php',
     array(
       'id_problem' => $idProblem,
       'id_patient' => $idPatient
     )
   );
   $relatedLinks .= ' | ';
-  $relatedLinks .= HTML::link(_("View Medical Tests"), '../medical/test_list.php',
+  $relatedLinks .= HTML::link(_("Ver testes realizados"), '../medical/test_list.php',
     array(
       'id_problem' => $idProblem,
       'id_patient' => $idPatient
@@ -123,7 +123,7 @@
   );
   echo HTML::para($relatedLinks);
 
-  echo HTML::section(2, _("Medical Problem Data"));
+  echo HTML::section(2, _("Dados do atendimento"));
 
   if ($problem->getIdMember())
   {
@@ -133,7 +133,7 @@
       $staff = $staffQ->fetch();
       if ($staff)
       {
-        echo HTML::section(3, _("Attending Physician"));
+        echo HTML::section(3, _("Profissional atendente"));
         echo HTML::para($staff->getSurname1() . ' ' . $staff->getSurname2() . ', ' . $staff->getFirstName());
       }
       $staffQ->freeResult();
@@ -143,57 +143,61 @@
     unset($staff);
   }
 
-  echo HTML::section(3, _("Opening Date"));
+  echo HTML::section(3, _("Incluído em"));
   echo HTML::para(I18n::localDate($problem->getOpeningDate()));
 
   if ($problem->getLastUpdateDate() != "" && $problem->getLastUpdateDate() != "0000-00-00") // backwards compatibility
   {
-    echo HTML::section(3, _("Last Update Date"));
+    echo HTML::section(3, _("Ultima atualização"));
     echo HTML::para(I18n::localDate($problem->getLastUpdateDate()));
   }
 
   if ($problem->getClosingDate() != "" && $problem->getClosingDate() != "0000-00-00")
   {
-    echo HTML::section(3, _("Closing Date"));
+    echo HTML::section(3, _("Data de Encerramento"));
     echo HTML::para(I18n::localDate($problem->getClosingDate()));
   }
 
   if ($problem->getMeetingPlace())
   {
-    echo HTML::section(3, _("Meeting Place"));
+    echo HTML::section(3, _("Local e Data de atendimento"));
     echo HTML::para($problem->getMeetingPlace());
   }
 
-  echo HTML::section(3, _("Wording"));
+  echo HTML::section(3, _("Resumo"));
   echo HTML::para(nl2br($problem->getWording()));
 
   if ($problem->getSubjective())
   {
-    echo HTML::section(3, _("Subjective"));
+    echo HTML::section(3, _("Informações pedagógicas"));
     echo HTML::para(nl2br($problem->getSubjective()));
   }
 
-  if ($problem->getObjective())
-  {
-    echo HTML::section(3, _("Objective"));
-    echo HTML::para(nl2br($problem->getObjective()));
+  
+  if (in_array($_SESSION['auth']['login_session'], $userArray)) {
+
+    if ($problem->getObjective())
+    {
+      echo HTML::section(3, _("Informações psicológicas (Campo restrito ao psicologo)"));
+      echo HTML::para(nl2br($problem->getObjective()));
+    }
   }
 
   if ($problem->getAppreciation())
   {
-    echo HTML::section(3, _("Appreciation"));
+    echo HTML::section(3, _("Evoluções"));
     echo HTML::para(nl2br($problem->getAppreciation()));
   }
 
   if ($problem->getActionPlan())
   {
-    echo HTML::section(3, _("Action Plan"));
+    echo HTML::section(3, _("Próximos passos"));
     echo HTML::para(nl2br($problem->getActionPlan()));
   }
 
   if ($problem->getPrescription())
   {
-    echo HTML::section(3, _("Prescription"));
+    echo HTML::section(3, _("Prescrições"));
     echo HTML::para(nl2br($problem->getPrescription()));
   }
 

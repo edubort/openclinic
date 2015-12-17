@@ -266,7 +266,7 @@ class I18n
     switch (strlen($date))
     {
       case 0:
-        $local = date(_("Y-m-d H:i:s"));
+        $local = date(_("d/m/Y H:i:s"));
         break;
 
       case 8: // Ymd
@@ -278,7 +278,7 @@ class I18n
           }
           else
           {
-            $local = date(_("Y-m-d"), mktime(0, 0, 0, substr($date, 4, 2), substr($date, 6, 2), substr($date, 0, 4)));
+            $local = date(_("d/m/Y"), mktime(0, 0, 0, substr($date, 4, 2), substr($date, 6, 2), substr($date, 0, 4)));
           }
         }
         break;
@@ -292,7 +292,7 @@ class I18n
           }
           else
           {
-            $local = date(_("Y-m-d H:i:s"), mktime(substr($date, 8, 2), substr($date, 10, 2), substr($date, 12, 2), substr($date, 4, 2), substr($date, 6, 2), substr($date, 0, 4)));
+            $local = date(_("d/m/Y H:i:s"), mktime(substr($date, 8, 2), substr($date, 10, 2), substr($date, 12, 2), substr($date, 4, 2), substr($date, 6, 2), substr($date, 0, 4)));
           }
         }
         break;

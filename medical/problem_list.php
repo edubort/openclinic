@@ -44,7 +44,7 @@
   /**
    * Show page
    */
-  $title = _("Medical Problems Report");
+  $title = _("Central de atendimento Beneficiário");
   $titlePage = $patient->getName() . ' (' . $title . ')';
   require_once("../layout/header.php");
 
@@ -67,7 +67,7 @@
   if ($_SESSION['auth']['is_administrative'])
   {
     echo HTML::para(
-      HTML::link(_("Add New Medical Problem"), '../medical/problem_new_form.php',
+      HTML::link(_("Iniciar novo atendimento"), '../medical/problem_new_form.php',
         array(
           'id_patient' => $idPatient,
           'order_number' => $lastOrderNumber
@@ -78,23 +78,23 @@
 
   echo HTML::rule();
 
-  echo HTML::section(2, _("Medical Problems List:"));
+  echo HTML::section(2, _("Lista de atendimentos:"));
 
   if ( !$problemQ->selectProblems($idPatient) )
   {
     $problemQ->close();
 
-    echo Msg::info(_("No medical problems defined for this patient."));
+    echo Msg::info(_("Nenhum atendimento foi realizado para esse beneficiário."));
     include_once("../layout/footer.php");
     exit();
   }
 
   $thead = array(
-    _("Order Number"),
-    _("Function") => array('colspan' => ($_SESSION['auth']['is_administrative'] ? 5 : 3)),
-    _("Wording"),
-    _("Opening Date"),
-    _("Last Update Date")
+    _("Código atendimento"),
+    _("Ações") => array('colspan' => ($_SESSION['auth']['is_administrative'] ? 5 : 3)),
+    _("Resumo"),
+    _("Atendido em"),
+    _("Alterado em")
   );
 
   $options = array(
