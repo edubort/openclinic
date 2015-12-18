@@ -32,7 +32,7 @@
   $row .= I18n::localDate($formVar["last_update_date"]);
   $tbody[] = $row;
 
-  $row = Form::label("id_member", _("Profissional atendente") . ":");
+  $row = Form::label("id_member", _("Atendimento pelo projeto") . ":");
 
   $staffQ = new Query_Staff();
 
@@ -94,7 +94,7 @@
       )
     );
   }
-  
+
   $tbody[] = $row;
 
   $row = Form::label("appreciation", _("Evoluções") . ":");

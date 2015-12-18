@@ -133,7 +133,7 @@
       $staff = $staffQ->fetch();
       if ($staff)
       {
-        echo HTML::section(3, _("Profissional atendente"));
+        echo HTML::section(3, _("Projeto deste atendimento"));
         echo HTML::para($staff->getSurname1() . ' ' . $staff->getSurname2() . ', ' . $staff->getFirstName());
       }
       $staffQ->freeResult();

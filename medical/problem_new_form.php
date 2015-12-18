@@ -52,7 +52,7 @@
   /**
    * Show page
    */
-  $title = _("Add New Medical Problem");
+  $title = _("Novo atendimento");
   $titlePage = $patient->getName() . ' (' . $title . ')';
   $focusFormField = "wording"; // to avoid JavaScript mistakes in demo version
   require_once("../layout/header.php");
